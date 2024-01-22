@@ -9,9 +9,9 @@ contract ERC721AGasFeesAutoYield is ERC721A {
     address blastYieldContract = 0x4300000000000000000000000000000000000002;
 
     constructor(string memory name_, string memory symbol_) ERC721A (name_, symbol_) {
-	      IBlast(blastYieldContract).configureAutomaticYield();
-        IBlast(blastYieldContract).configureClaimableGas();
-	  }
+      IBlast(blastYieldContract).configureAutomaticYield();
+      IBlast(blastYieldContract).configureClaimableGas();
+    }
 
     function _claimAllGas(address contractAddress, address recipient) internal {
       IBlast(blastYieldContract).claimAllGas(contractAddress, recipient);
